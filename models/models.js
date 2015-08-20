@@ -54,12 +54,12 @@ exports.User = User;
 sequelize.sync().then(function() {
   // then(..) ejecuta el manejador una vez creada la tabla
  // la tabla se inicializa solo si está vacía
-      User.bulkCreate( 
+      User.create( 
         [ {username: 'admin',   password: '1234', isAdmin: true},
           {username: 'pepe',   password: '5678'} // el valor por defecto de isAdmin es 'false'
         ]);
     // la tabla se inicializa solo si está vacía
-            Quiz.bulkCreate( 
+            Quiz.create( 
               [ {pregunta: 'Capital de Italia',   respuesta: 'Roma', UserId: 2}, // estos quizes pertenecen al usuario pepe (2)
                 {pregunta: 'Capital de Portugal', respuesta: 'Lisboa', UserId: 2}
               ]);
